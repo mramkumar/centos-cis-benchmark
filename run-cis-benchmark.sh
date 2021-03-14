@@ -91,15 +91,15 @@ if [[ $(whoami) != "root" ]]; then
         exit 1
 fi
 
-echo "CIS CentOS Linux 7 Benchmark (v2.2.0 - 12-27-2017)"
+echo "CIS CentOS Linux 7 Benchmark (v3.0.0 - 06-25-2020)"
 echo
 echo hostname : `hostname`
 echo time     : `date`
 echo =================================================================================
-test_wrapper 1.1.1.1 "Ensure mounting of cramfs filesystems is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.1.2 "Ensure mounting of freevxfs filesystems is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.1.3 "Ensure mounting of jffs2 filesystems is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.1.4 "Ensure mounting of hfs filesystems is disabled (Scored)" Yes Server1 Workstation1
+test_wrapper 1.1.1.1 "Ensure mounting of cramfs filesystems is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.1.2 "Ensure mounting of squashfs filesystems is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.1.3 "Ensure mounting of udf filesystems is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.1.4 "Ensure mounting of FAT filesystems is limited (Manual)" Yes Server1 Workstation1
 test_wrapper 1.1.2 "Ensure separate partition exists for /tmp (Scored)" Yes Server2 Workstation2
 test_wrapper 1.1.3 "Ensure nodev option set on /tmp partition (Scored)" Yes Server1 Workstation1
 test_wrapper 1.1.4 "Ensure nosuid option set on /tmp partition (Scored)" Yes Server1 Workstation1

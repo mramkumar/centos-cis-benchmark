@@ -1,7 +1,16 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.1.4 - Ensure mounting of hfs filesystems is disabled (Scored)
+# 1.1.1.4 Ensure mounting of FAT filesystems is limited (Manual)
 
-modprobe -n -v hfs 2>&1 | grep -E "(install /bin/true|FATAL: Module hfs not found.)" || exit $?
-[[ -z "$(lsmod | grep hfs)" ]] || exit 1
+
+[[ -z "$(grep -E -i '\svfat\s' /etc/fstab)" ]] || exit 1
+
+modprobe -n -v fat | grep -E '(fat|install)'     || exit $?
+[[ -z "$(lsmod | grep fat)" ]]   || exit 1
+
+modprobe -n -v vfat | grep -E '(vfat|install)'   || exit $?
+[[ -z "$(lsmod | grep vfat)" ]]  || exit 1
+
+modprobe -n -v msdos | grep -E '(msdos|install)' || exit $?
+[[ -z "$(lsmod | grep msdos)" ]] || exit 1

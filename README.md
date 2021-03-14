@@ -1,9 +1,11 @@
 # Linux-cis-benchmark
 Based on CIS CentOS Linux 7 Benchmark
+
 Based on CIS RedHat Linux 7 Benchmark
 
 v2.2.0 - 12-27-2017
-v3.0.0 - 03-14-2021
+
+v3.0.0 - 06-25-2020
 
 ## How to run the audit
 To run the audit, execute these steps
