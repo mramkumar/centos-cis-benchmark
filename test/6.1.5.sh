@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 6.1.5 - Ensure permissions on /etc/gshadow are configured (Scored)
+# 6.1.5 Ensure permissions on /etc/gshadow are configured (Automated)
 
 stat -L -c "%a %u %g" /etc/gshadow | grep -q "^0 0 0$" || exit $?

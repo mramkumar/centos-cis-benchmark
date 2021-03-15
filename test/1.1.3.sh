@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.3 - Ensure nodev option set on /tmp partition (Scored)
+# 1.1.3 Ensure noexec option set on /tmp partition (Automated)
 
-mount | grep /tmp | grep nodev || exit $?
+mount | grep /tmp | grep noexec || exit $?

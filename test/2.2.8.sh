@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.8 - Ensure DNS Server is not enabled (Scored)
+# 2.2.8 Ensure rpcbind is not installed or the rpcbind services are masked (Automated)
 
-systemctl is-enabled named 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+rpm -q rpcbind | grep -E "package rpcbind is not installed" || exit $1

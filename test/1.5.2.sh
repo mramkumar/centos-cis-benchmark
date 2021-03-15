@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.5.2 - Ensure XD/NX support is enabled (Not Scored)
+# 1.5.2 Ensure permissions on bootloader config are configured (Automated)
 
-dmesg | grep NX | grep "NX (Execute Disable) protection: active" || exit $1
+stat -L -c "%a %u %g" /boot/grub2/grub.cfg | grep -q "600 0 0$" || exit $?

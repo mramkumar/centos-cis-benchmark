@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.18 - Ensure telnet server is not enabled (Scored)
+# 2.2.18 Ensure NIS server is not installed (Automated)
 
-systemctl is-enabled telnet.socket 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+rpm -q ypserv | grep -E "package ypserv is not installed" || exit $1

@@ -1,6 +1,8 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.3 - Ensure Avahi Server is not enabled (Scored)
+# 2.2.3 Ensure Avahi Server is not installed (Automated)
 
-systemctl is-enabled avahi-daemon 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+rpm -q avahi-autoipd | grep -E "package avahi-autoipd is not installed" || exit $1
+
+rpm -q  vahi| grep -E "package avahi is not installed" || exit $1

@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.6.2 - Ensure SELinux is installed (Scored)
+# 1.6.2 Ensure XD/NX support is enabled (Automated)
 
-rpm -q libselinux |grep -E "libselinux-" || exit $?
+dmesg | grep NX | grep "NX (Execute Disable) protection: active" || exit $1

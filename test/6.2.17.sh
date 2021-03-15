@@ -1,14 +1,15 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 6.2.17 - Ensure no duplicate GIDs exist (Scored)
+# 6.2.17 Ensure no duplicate group names exist (Automated)
 
-cat /etc/group | cut -f3 -d":" | sort -n | uniq -c | while read x ; do
+cat /etc/group | cut -f1 -d":" | sort -n | uniq -c | while read x ; do
    [ -z "${x}" ] && break
    set - $x
    if [ $1 -gt 1 ]; then
       if [[ $1 -ne '' ]] ; then
-         echo "Duplicate GID ($2): ${groups}"
+         gids=`gawk -F: '($1 == n) { print $3 }' n=$2 /etc/group | xargs`
+         echo "Duplicate Group Name ($2): ${gids}"
       fi
       exit 1
    fi

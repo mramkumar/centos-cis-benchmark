@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.14 - Ensure SNMP Server is not enabled (Scored)
+# 2.2.14 Ensure HTTP Proxy Server is not installed (Automated)
 
-systemctl is-enabled snmpd 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+rpm -q squid | grep -E "package squid is not installed" || exit $1

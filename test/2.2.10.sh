@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.10 - Ensure HTTP server is not enabled (Scored)
+# 2.2.10 Ensure FTP Server is not installed (Automated)
 
-systemctl is-enabled httpd 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+rpm -q vsftpd | grep -E "package vsftpd is not installed" || exit $1

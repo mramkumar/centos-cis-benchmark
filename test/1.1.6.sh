@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.6 - Ensure separate partition exists for /var (Scored)
+# 1.1.6 Ensure /dev/shm is configured (Automated)
 
-mount | grep /var || exit $?
+mount | grep /dev/shm || exit $?

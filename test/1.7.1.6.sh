@@ -1,6 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.7.1.6 - Ensure permissions on /etc/issue.net are configured (Not Scored)
+# 1.7.1.6 Ensure no unconfined services exist (Automated)
 
-stat -L -c "%a %u %g" /etc/issue.net | grep -q "644 0 0$" || exit $?
+out=$(ps -eZ | egrep "initrc" | egrep -vw "tr|ps|egrep|bash|awk" | tr ':' ' ' | awk '{ print $NF }')
+[[ -z "${out}" ]] || exit 1

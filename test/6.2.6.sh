@@ -1,60 +1,38 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 6.2.6 - Ensure root PATH Integrity (Scored)
+# 6.2.6 Ensure users' home directories permissions are 750 or more restrictive (Automated)
 
-export debug=$1
-
-if [ "`echo $PATH | grep ::`" != "" ]; then
-	if [[ $1 -ne '' ]] ; then
-		echo "Empty Directory in PATH (::)"
-	fi
-	exit 1
-fi
-if [ "`echo $PATH | grep :$`" != "" ]; then
-	if [[ $1 -ne '' ]] ; then
-		echo "Trailing : in PATH"
-	fi
-	exit 1
-fi
-
-p=`echo $PATH | sed -e 's/::/:/' -e 's/:$//' -e 's/:/ /g'`
-set -- $p
-while [ "$1" != "" ]; do
-   if [ "$1" = "." ]; then
-      if [[ $1 -ne '' ]] ; then
-         echo "PATH contains ."
-      fi
-      exit 1
-      shift
-      continue
-   fi
-   if [ -d $1 ]; then
-      dirperm=`ls -ldH $1 | cut -f1 -d" "`
+cat /etc/passwd | egrep -v '^(root|halt|sync|shutdown)' | awk -F: '($7 != "/sbin/nologin" && $7 != "/bin/false") { print $1 " " $6 }' | while read user dir; do
+   if [ -d "$dir" ]; then
+      dirperm=`ls -ld $dir | cut -f1 -d" "`
       if [ `echo $dirperm | cut -c6` != "-" ]; then
          if [[ $1 -ne '' ]] ; then
-            echo "Group Write permission set on directory $1"
+            echo "Group Write permission set on the home directory ($dir) of user $user"
          fi
-      exit 1
+         exit 1
       fi
+		
+      if [ `echo $dirperm | cut -c8` != "-" ]; then
+         if [[ $1 -ne '' ]] ; then
+            echo "Other Read permission set on the home directory ($dir) of user $user"
+         fi
+
+         exit 1
+      fi
+
       if [ `echo $dirperm | cut -c9` != "-" ]; then
          if [[ $1 -ne '' ]] ; then
-            echo "Other Write permission set on directory $1"
+            echo "Other Write permission set on the home directory ($dir) of user $user"
          fi
          exit 1
       fi
-      dirown=`ls -ldH $1 | awk '{print $3}'`
-      if [ "$dirown" != "root" ] ; then
+
+      if [ `echo $dirperm | cut -c10` != "-" ]; then
          if [[ $1 -ne '' ]] ; then
-            echo $1 is not owned by root
+            echo "Other Execute permission set on the home directory ($dir) of user $user"
          fi
          exit 1
       fi
-   else
-      if [[ $debug -ne '' ]] ; then
-         echo $1 is not a directory
-      fi
-      exit 1
-   fi	
-   shift
+   fi
 done

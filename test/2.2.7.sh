@@ -1,10 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.7 - Ensure NFS and RPC are not enabled (Scored)
+# 2.2.7 Ensure nfs-utils is not installed or the nfs-server service is masked (Automated)
 
-variable="nfs|nfs-server|rpcbind"
-for i in $(echo $variable | sed "s/|/ /g")
-do
-    systemctl is-enabled $i 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
-done
+rpm -q nfs-utils | grep -E "package nfs-utils is not installed" || exit $1

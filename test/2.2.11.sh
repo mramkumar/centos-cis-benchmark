@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.11 - Ensure IMAP and POP3 server is not enabled (Scored)
+# 2.2.11 Ensure HTTP server is not installed (Automated)
 
-systemctl is-enabled dovecot 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+rpm -q httpd | grep -E "package httpd is not installed" || exit $1

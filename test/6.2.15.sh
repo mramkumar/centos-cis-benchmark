@@ -1,13 +1,14 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 6.2.15 - Ensure all groups in /etc/passwd exist in /etc/group (Scored)
+# 6.2.15 Ensure no duplicate GIDs exist (Automated)
 
-for i in $(cut -s -d: -f4 /etc/passwd | sort -u ); do
-   grep -q -P "^.*?:[^:]*:$i:" /etc/group
-   if [ $? -ne 0 ]; then
+cat /etc/group | cut -f3 -d":" | sort -n | uniq -c | while read x ; do
+   [ -z "${x}" ] && break
+   set - $x
+   if [ $1 -gt 1 ]; then
       if [[ $1 -ne '' ]] ; then
-         echo "Group $i is referenced by /etc/passwd but does not exist in /etc/group"
+         echo "Duplicate GID ($2): ${groups}"
       fi
       exit 1
    fi

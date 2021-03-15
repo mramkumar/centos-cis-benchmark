@@ -1,6 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.22 - Disable Automounting (Scored)
+# 1.1.22 Ensure sticky bit is set on all world-writable directories (Automated)
 
-systemctl is-enabled autofs 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
+dirs="$(df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d \( -perm -0002 -a ! -perm -1000 \))"
+[[ -z "${dirs}" ]] || exit 1

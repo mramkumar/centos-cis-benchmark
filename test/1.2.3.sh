@@ -1,7 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.2.3 - Ensure gpgcheck is globally activated (Scored)
+# 1.2.3 Ensure gpgcheck is globally activated (Automated)
 
 if [[ $(ls -A /etc/yum.repos.d/) ]] ; then
         grep ^gpgcheck /etc/yum.conf /etc/yum.repos.d/* | grep -E "gpgcheck=1" || exit $?

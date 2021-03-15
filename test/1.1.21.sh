@@ -1,7 +1,12 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.21 - Ensure sticky bit is set on all world-writable directories (Scored)
+# 1.1.21 Ensure nosuid option set on removable media partitions (Manual)
 
-dirs="$(df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d \( -perm -0002 -a ! -perm -1000 \))"
-[[ -z "${dirs}" ]] || exit 1
+MEDIA=$(mount -l -t vfat,iso9660,ext)
+
+if [[ -z $MEDIA ]]; then
+        exit 0
+else
+        echo $MEDIA | grep "nosuid" || exit $?
+fi

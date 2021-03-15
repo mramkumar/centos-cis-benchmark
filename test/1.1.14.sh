@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.14 - Ensure nodev option set on /home partition (Scored)
+# 1.1.14 Ensure nosuid option set on /var/tmp partition (Automated)
 
-mount | grep /home | grep nodev || exit $?
+mount | grep /var/tmp | grep nosuid || exit $?

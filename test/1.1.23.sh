@@ -3,6 +3,4 @@
 
 # 1.1.23 Disable Automounting (Automated)
 
-out=$(systemctl is-enabled autofs | grep 'enabled')
-[[ -z "${out}" ]] || exit 1
-
+systemctl is-enabled autofs 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?

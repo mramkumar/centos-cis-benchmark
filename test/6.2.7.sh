@@ -1,13 +1,16 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 6.2.7 - Ensure all users' home directories exist (Scored)
+# 6.2.7 Ensure users own their home directories (Automated)
 
 cat /etc/passwd | egrep -v '^(root|halt|sync|shutdown)' | awk -F: '($7 != "/sbin/nologin" && $7 != "/bin/false") { print $1 " " $6 }' | while read user dir; do
-   if [ ! -d "$dir" ]; then
-      if [[ $1 -ne '' ]] ; then
-         echo $dir;
+   if [ -d "$dir" ]; then
+      owner=$(stat -L -c "%U" "$dir")
+      if [ "$owner" != "$user" ]; then
+         if [[ $1 -ne '' ]] ; then
+            echo "The home directory ($dir) of user $user is owned by $owner."
+         fi
+         exit 1
       fi
-      exit 1
    fi
 done

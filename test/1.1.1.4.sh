@@ -6,11 +6,11 @@
 
 [[ -z "$(grep -E -i '\svfat\s' /etc/fstab)" ]] || exit 1
 
-modprobe -n -v fat | grep -E '(fat|install)'     || exit $?
+modprobe -n -v fat | grep -E '(install|/bin/true)'  || exit $?
 [[ -z "$(lsmod | grep fat)" ]]   || exit 1
 
-modprobe -n -v vfat | grep -E '(vfat|install)'   || exit $?
+modprobe -n -v vfat | grep -E '(install|/bin/true)'  || exit $?
 [[ -z "$(lsmod | grep vfat)" ]]  || exit 1
 
-modprobe -n -v msdos | grep -E '(msdos|install)' || exit $?
+modprobe -n -v msdos | grep -E '(install|/bin/true)' || exit $?
 [[ -z "$(lsmod | grep msdos)" ]] || exit 1

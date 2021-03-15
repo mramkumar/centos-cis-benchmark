@@ -100,201 +100,46 @@ test_wrapper 1.1.1.1 "Ensure mounting of cramfs filesystems is disabled (Automat
 test_wrapper 1.1.1.2 "Ensure mounting of squashfs filesystems is disabled (Automated)" Yes Server1 Workstation1
 test_wrapper 1.1.1.3 "Ensure mounting of udf filesystems is disabled (Automated)" Yes Server1 Workstation1
 test_wrapper 1.1.1.4 "Ensure mounting of FAT filesystems is limited (Manual)" Yes Server1 Workstation1
-test_wrapper 1.1.2 "Ensure separate partition exists for /tmp (Scored)" Yes Server2 Workstation2
-test_wrapper 1.1.3 "Ensure nodev option set on /tmp partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.4 "Ensure nosuid option set on /tmp partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.5 "Ensure noexec option set on /tmp partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.6 "Ensure separate partition exists for /var (Scored)" Yes Server2 Workstation2
-test_wrapper 1.1.7 "Ensure separate partition exists for /var/tmp (Scored)" Yes Server2 Workstation2
-test_wrapper 1.1.8 "Ensure nodev option set on /var/tmp partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.9 "Ensure nosuid option set on /var/tmp partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.10 "Ensure noexec option set on /var/tmp partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.11 "Ensure separate partition exists for /var/log (Scored)" Yes Server2 Workstation2
-test_wrapper 1.1.12 "Ensure separate partition exists for /var/log/audit (Scored)" Yes Server2 Workstation2
-test_wrapper 1.1.13 "Ensure separate partition exists for /home (Scored)" Yes Server2 Workstation2
-test_wrapper 1.1.14 "Ensure nodev option set on /home partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.15 "Ensure nodev option set on /dev/shm partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.16 "Ensure nosuid option set on /dev/shm partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.17 "Ensure noexec option set on /dev/shm partition (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.18 "Ensure nodev option set on removable media partitions (Not Scored)" No Server1 Workstation1
-test_wrapper 1.1.19 "Ensure nosuid option set on removable media partitions (Not Scored)" No Server1 Workstation1
-test_wrapper 1.1.20 "Ensure noexec option set on removable media partitions (Not Scored)" No Server1 Workstation1
-test_wrapper 1.1.21 "Ensure sticky bit is set on all world-writable directories (Scored)" Yes Server1 Workstation1
-test_wrapper 1.1.22 "Disable Automounting (Scored)" Yes Server1 Workstation2
-test_wrapper 1.2.1 "Ensure package manager repositories are configured (Not Scored)" No Server1 Workstation1
-test_wrapper 1.2.2 "Ensure GPG keys are configured (Not Scored)" No Server1 Workstation1
-test_wrapper 1.2.3 "Ensure gpgcheck is globally activated (Scored)" Yes Server1 Workstation1
-test_wrapper 1.3.1 "Ensure AIDE is installed (Scored)" Yes Server1 Workstation1
-test_wrapper 1.3.2 "Ensure filesystem integrity is regularly checked (Scored)" Yes Server1 Workstation1
-test_wrapper 1.4.1 "Ensure permissions on bootloader config are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 1.4.2 "Ensure bootloader password is set (Scored)" Yes Server1 Workstation1
-test_wrapper 1.5.1 "Ensure core dumps are restricted (Scored)" Yes Server1 Workstation1
-test_wrapper 1.5.2 "Ensure XD/NX support is enabled (Not Scored)" No Server1 Workstation1
-test_wrapper 1.5.3 "Ensure address space layout randomization (ASLR) is enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 1.6.2 "Ensure SELinux is installed (Scored)" Yes Server2 Workstation2
-test_wrapper 1.7.1.1 "Ensure message of the day is configured properly (Scored)" Yes Server1 Workstation1
-test_wrapper 1.7.1.2 "Ensure local login warning banner is configured properly (Not Scored)" No Server1 Workstation1
-test_wrapper 1.7.1.3 "Ensure remote login warning banner is configured properly (Not Scored)" No Server1 Workstation1
-test_wrapper 1.7.1.4 "Ensure permissions on /etc/motd are configured (Not Scored)" No Server1 Workstation1
-test_wrapper 1.7.1.5 "Ensure permissions on /etc/issue are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 1.7.1.6 "Ensure permissions on /etc/issue.net are configured (Not Scored)" No Server1 Workstation1
-test_wrapper 1.8 "Ensure updates, patches, and additional security software are installed (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.1 "Ensure chargen services are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.2 "Ensure daytime services are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.3 "Ensure discard services are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.4 "Ensure echo services are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.5 "Ensure time services are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.1.6 "Ensure tftp server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.1.1 "Ensure time synchronization is in use (Not Scored)" No Server1 Workstation1
-test_wrapper 2.2.1.2 "Ensure ntp is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.1.3 "Ensure chrony is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.2 "Ensure X Window System is not installed (Scored)" Yes Server1 Workstation2
-test_wrapper 2.2.3 "Ensure Avahi Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.4 "Ensure CUPS is not enabled (Scored)" Yes Server1 Workstation2
-test_wrapper 2.2.5 "Ensure DHCP Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.6 "Ensure LDAP server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.7 "Ensure NFS and RPC are not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.8 "Ensure DNS Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.9 "Ensure FTP Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.10 "Ensure HTTP server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.11 "Ensure IMAP and POP3 server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.12 "Ensure Samba is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.13 "Ensure HTTP Proxy Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.14 "Ensure SNMP Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.15 "Ensure mail transfer agent is configured for local-only mode (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.16 "Ensure NIS Server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.17 "Ensure rsh server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.18 "Ensure telnet server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.2.19 "Ensure tftp server is not enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 2.3.1 "Ensure NIS Client is not installed (Scored)" Yes Server1 Workstation1
-test_wrapper 2.3.2 "Ensure rsh client is not installed (Scored)" Yes Server1 Workstation1
-test_wrapper 2.3.3 "Ensure talk client is not installed (Scored)" Yes Server1 Workstation1
-test_wrapper 2.3.4 "Ensure telnet client is not installed (Scored)" Yes Server1 Workstation1
-test_wrapper 2.3.5 "Ensure LDAP client is not installed (Scored)" Yes Server1 Workstation1
-test_wrapper 3.1.1 "Ensure IP forwarding is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 3.1.2 "Ensure packet redirect sending is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 3.2.1 "Ensure source routed packets are not accepted (Scored)" Yes Server1 Workstation1
-test_wrapper 3.2.2 "Ensure ICMP redirects are not accepted (Scored)" Yes Server1 Workstation1
-test_wrapper 3.2.3 "Ensure secure ICMP redirects are not accepted (Scored)" Yes Server1 Workstation1
-test_wrapper 3.2.4 "Ensure suspicious packets are logged (Scored)" Yes Server1 Workstation1
-test_wrapper 3.2.5 "Ensure broadcast ICMP requests are ignored (Scored)" Yes Server1 Workstation1
-test_wrapper 3.2.6 "Ensure bogus ICMP responses are ignored (Scored)" Yes Server1 Workstation1
-test_wrapper 3.3.1 "Ensure IPv6 router advertisements are not accepted (Not Scored)" No Server1 Workstation1
-test_wrapper 3.3.2 "Ensure IPv6 redirects are not accepted (Not Scored)" No Server1 Workstation1
-test_wrapper 3.3.3 "Ensure IPv6 is disabled (Not Scored)" No Server1 Workstation1
-test_wrapper 3.4.1 "Ensure TCP Wrappers is installed (Scored)" Yes Server1 Workstation1
-test_wrapper 3.4.2 "Ensure /etc/hosts.allow is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 3.5.1 "Ensure DCCP is disabled (Not Scored)" No Server1 Workstation1
-test_wrapper 3.5.2 "Ensure SCTP is disabled (Not Scored)" No Server1 Workstation1
-test_wrapper 3.5.3 "Ensure RDS is disabled (Not Scored)" No Server1 Workstation1
-test_wrapper 3.7 "Ensure wireless interfaces are disabled (Not Scored)" No Server1 Workstation2
-test_wrapper 4.1.1.1 "Ensure audit log storage size is configured (Not Scored)" No Server2 Workstation2
-test_wrapper 4.1.1.2 "Ensure system is disabled when audit logs are full (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.1.3 "Ensure audit logs are not automatically deleted (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.2 "Ensure auditd service is enabled (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.3 "Ensure auditing for processes that start prior to auditd is enabled (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.4 "Ensure events that modify date and time information are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.5 "Ensure events that modify user/group information are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.6 "Ensure events that modify the system's network environment are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.7 "Ensure events that modify the system's Mandatory Access Controls are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.8 "Ensure login and logout events are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.9 "Ensure session initiation information is collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.10 "Ensure discretionary access control permission modification events are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.11 "Ensure unsuccessful unauthorized file access attempts are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.12 "Ensure use of privileged commands is collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.13 "Ensure successful file system mounts are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.14 "Ensure file deletion events by users are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.15 "Ensure changes to system administration scope (sudoers) is collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.16 "Ensure system administrator actions (sudolog) are collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.1.17 "Ensure kernel module loading and unloading is collected (Scored)" Yes Server2 Workstation2
-test_wrapper 4.2.1.1 "Ensure rsyslog Service is enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 4.2.1.2 "Ensure logging is configured (Not Scored)" No Server1 Workstation1
-test_wrapper 4.2.1.3 "Ensure rsyslog default file permissions configured (Scored)" Yes Server1 Workstation1
-test_wrapper 4.2.1.4 "Ensure rsyslog is configured to send logs to a remote log host (Scored)" Yes Server1 Workstation1
-test_wrapper 4.2.1.5 "Ensure remote rsyslog messages are only accepted on designated log hosts. (Not Scored)" No Server1 Workstation1
-test_wrapper 4.2.2.1 "Ensure syslog-ng service is enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 4.2.2.2 "Ensure logging is configured (Not Scored)" No Server1 Workstation1
-test_wrapper 4.2.2.3 "Ensure syslog-ng default file permissions configured (Scored)" Yes Server1 Workstation1
-test_wrapper 4.2.3 "Ensure rsyslog or syslog-ng is installed (Scored)" Yes Server1 Workstation1
-test_wrapper 4.2.4 "Ensure permissions on all logfiles are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 4.3 "Ensure logrotate is configured (Not Scored)" No Server1 Workstation1
-test_wrapper 5.1.1 "Ensure cron daemon is enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.2 "Ensure permissions on /etc/crontab are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.3 "Ensure permissions on /etc/cron.hourly are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.4 "Ensure permissions on /etc/cron.daily are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.5 "Ensure permissions on /etc/cron.weekly are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.6 "Ensure permissions on /etc/cron.monthly are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.7 "Ensure permissions on /etc/cron.d are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.1.8 "Ensure at/cron is restricted to authorized users (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.1 "Ensure permissions on /etc/ssh/sshd_config are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.2 "Ensure SSH Protocol is set to 2 (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.3 "Ensure SSH LogLevel is set to INFO (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.4 "Ensure SSH X11 forwarding is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.5 "Ensure SSH MaxAuthTries is set to 4 or less (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.6 "Ensure SSH IgnoreRhosts is enabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.7 "Ensure SSH HostbasedAuthentication is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.8 "Ensure SSH root login is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.9 "Ensure SSH PermitEmptyPasswords is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.10 "Ensure SSH PermitUserEnvironment is disabled (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.11 "Ensure only approved MAC algorithms are used (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.12 "Ensure SSH Idle Timeout Interval is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.13 "Ensure SSH LoginGraceTime is set to one minute or less (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.14 "Ensure SSH access is limited (Scored)" Yes Server1 Workstation1
-test_wrapper 5.2.15 "Ensure SSH warning banner is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.3.1 "Ensure password creation requirements are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.3.2 "Ensure lockout for failed password attempts is configured (Scored)" Yes Server1 Workstation1
-test_wrapper 5.3.3 "Ensure password reuse is limited (Scored)" Yes Server1 Workstation1
-test_wrapper 5.3.4 "Ensure password hashing algorithm is SHA-512 (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.1.1 "Ensure password expiration is 365 days or less (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.1.2 "Ensure minimum days between password changes is 7 or more (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.1.3 "Ensure password expiration warning days is 7 or more (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.1.4 "Ensure inactive password lock is 30 days or less (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.1.5 "Ensure all users last password change date is in the past (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.2 "Ensure system accounts are non-login (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.3 "Ensure default group for the root account is GID 0 (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.4 "Ensure default user umask is 027 or more restrictive (Scored)" Yes Server1 Workstation1
-test_wrapper 5.4.5 "Ensure default user shell timeout is 900 seconds or less (Scored)" Yes Server2 Workstation2
-test_wrapper 5.5 "Ensure root login is restricted to system console (Not Scored)" No Server1 Workstation1
-test_wrapper 5.6 "Ensure access to the su command is restricted (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.1 "Audit system file permissions (Not Scored)" No Server2 Workstation2
-test_wrapper 6.1.2 "Ensure permissions on /etc/passwd are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.3 "Ensure permissions on /etc/shadow are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.4 "Ensure permissions on /etc/group are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.5 "Ensure permissions on /etc/gshadow are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.6 "Ensure permissions on /etc/passwd- are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.7 "Ensure permissions on /etc/shadow- are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.8 "Ensure permissions on /etc/group- are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.9 "Ensure permissions on /etc/gshadow- are configured (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.10 "Ensure no world writable files exist (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.11 "Ensure no unowned files or directories exist (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.12 "Ensure no ungrouped files or directories exist (Scored)" Yes Server1 Workstation1
-test_wrapper 6.1.13 "Audit SUID executables (Not Scored)" No Server1 Workstation1
-test_wrapper 6.1.14 "Audit SGID executables (Not Scored)" No Server1 Workstation1
-test_wrapper 6.2.1 "Ensure password fields are not empty (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.2 "Ensure no legacy "+" entries exist in /etc/passwd (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.3 "Ensure no legacy "+" entries exist in /etc/shadow (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.4 "Ensure no legacy "+" entries exist in /etc/group (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.5 "Ensure root is the only UID 0 account (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.6 "Ensure root PATH Integrity (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.7 "Ensure all users' home directories exist (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.8 "Ensure users' home directories permissions are 750 or more restrictive (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.9 "Ensure users own their home directories (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.10 "Ensure users' dot files are not group or world writable (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.11 "Ensure no users have .forward files (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.12 "Ensure no users have .netrc files (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.13 "Ensure users' .netrc Files are not group or world accessible (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.14 "Ensure no users have .rhosts files (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.15 "Ensure all groups in /etc/passwd exist in /etc/group (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.16 "Ensure no duplicate UIDs exist (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.17 "Ensure no duplicate GIDs exist (Scored)" Yes Server1 Workstation1
-test_wrapper 6.2.18 "Ensure no duplicate user names exist (Scored)" Yes Server1 Workstation1
+test_wrapper 1.1.2 "Ensure /tmp is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.3 "Ensure noexec option set on /tmp partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.4 "Ensure nodev option set on /tmp partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.5 "Ensure nosuid option set on /tmp partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.6 "Ensure /dev/shm is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.7 "Ensure noexec option set on /dev/shm partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.8 "Ensure nodev option set on /dev/shm partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.9 "Ensure nosuid option set on /dev/shm partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.10 "Ensure separate partition exists for /var (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.11 "Ensure separate partition exists for /var/tmp (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.12 "Ensure noexec option set on /var/tmp partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.13 "Ensure nodev option set on /var/tmp partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.14 "Ensure nosuid option set on /var/tmp partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.15 "Ensure separate partition exists for /var/log (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.16 "Ensure separate partition exists for /var/log/audit (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.17 "Ensure separate partition exists for /home (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.18 "Ensure nodev option set on /home partition (Automated)" Yes Server1 Workstation1
+test_wrapper 1.1.19 "Ensure noexec option set on removable media partitions (Manual)" No Server1 Workstation1
+test_wrapper 1.1.20 "Ensure nodev option set on removable media partitions (Manual)" No Server1 Workstation1
+test_wrapper 1.1.21 "Ensure nosuid option set on removable media partitions (Manual)" No Server1 Workstation1
+test_wrapper 1.1.22 "Ensure sticky bit is set on all world-writable directories (Automated)" Yes Server1 Workstation1
 test_wrapper 1.1.23 "Disable Automounting (Automated)" Yes Server1 Workstation1
 test_wrapper 1.1.24 "Disable USB Storage (Automated)" Yes Server1 Workstation1
-test_wrapper 1.2.4 "Ensure Red Hat Subscription Manager connection is configured (Manual)" Yes Server1 Workstation1
-test_wrapper 1.2.5 "Disable the rhnsd Daemon (Manual)" Yes Server1 Workstation1
-test_wrapper 1.3.3 "Ensure sudo log file exists (Automated)" Yes Server1 Workstation1
+test_wrapper 1.2.1 "Ensure GPG keys are configured (Manual)" Yes Server1 Workstation1
+test_wrapper 1.2.2 "Ensure package manager repositories are configured (Manual)" Yes Server1 Workstation1
+test_wrapper 1.2.3 "Ensure gpgcheck is globally activated (Automated)" Yes Server1 Workstation1
+test_wrapper 1.4.1 "Ensure AIDE is installed (Automated)" Yes Server1 Workstation1
+test_wrapper 1.4.2 "Ensure filesystem integrity is regularly checked (Automated)" Yes Server1 Workstation1
+test_wrapper 1.5.1 "Ensure bootloader password is set (Automated)" Yes Server1 Workstation1
+test_wrapper 1.5.2 "Ensure permissions on bootloader config are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 1.5.3 "Ensure authentication required for single user mode (Automated)" Yes Server1 Workstation1
+test_wrapper 1.6.1 "Ensure core dumps are restricted (Automated)" Yes Server1 Workstation1
+test_wrapper 1.6.2 "Ensure XD/NX support is enabled (Automated)" Yes Server1 Workstation1
 test_wrapper 1.6.3 "Ensure address space layout randomization (ASLR) is enabled (Automated)" Yes Server1 Workstation1
 test_wrapper 1.6.4 "Ensure prelink is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 1.7.1.1 "Ensure SELinux is installed (Automated)" Yes Server1 Workstation1
+test_wrapper 1.7.1.2 "Ensure SELinux is not disabled in bootloader configuration (Automated)" Yes Server1 Workstation1
+test_wrapper 1.7.1.3 "Ensure SELinux policy is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 1.7.1.5 "Ensure the SELinux mode is enforcing (Automated)" Yes Server1 Workstation1
+test_wrapper 1.7.1.6 "Ensure no unconfined services exist (Automated)" Yes Server1 Workstation1
 test_wrapper 1.7.1.7 "Ensure SETroubleshoot is not installed (Automated)" Yes Server1 Workstation1
 test_wrapper 1.7.1.8 "Ensure the MCS Translation Service (mcstrans) is not installed (Automated)" Yes Server1 Workstation1
 test_wrapper 1.8.1.1 "Ensure message of the day is configured properly (Automated)" Yes Server1 Workstation1
@@ -303,58 +148,65 @@ test_wrapper 1.8.1.3 "Ensure remote login warning banner is configured properly 
 test_wrapper 1.8.1.4 "Ensure permissions on /etc/motd are configured (Automated)" Yes Server1 Workstation1
 test_wrapper 1.8.1.5 "Ensure permissions on /etc/issue are configured (Automated)" Yes Server1 Workstation1
 test_wrapper 1.8.1.6 "Ensure permissions on /etc/issue.net are configured (Automated)" Yes Server1 Workstation1
-test_wrapper 3.3.4 "Ensure suspicious packets are logged (Automated)" Yes Server1 Workstation1
-test_wrapper 3.3.5 "Ensure broadcast ICMP requests are ignored (Automated)" Yes Server1 Workstation1
-test_wrapper 3.3.6 "Ensure bogus ICMP responses are ignored (Automated)" Yes Server1 Workstation1
-test_wrapper 3.3.7 "Ensure Reverse Path Filtering is enabled (Automated)" Yes Server1 Workstation1
-test_wrapper 3.3.8 "Ensure TCP SYN Cookies is enabled (Automated)" Yes Server1 Workstation1
-test_wrapper 3.3.9 "Ensure IPv6 router advertisements are not accepted (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.1.1 "Ensure FirewallD is installed (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.1.2 "Ensure iptables-services package is not installed (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.1.3 "Ensure nftables is not installed or stopped and masked (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.1.4 "Ensure firewalld service is enabled and running (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.1.5 "Ensure default zone is set (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.1.6 "Ensure network interfaces are assigned to appropriate zone (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.1.7 "Ensure unnecessary services and ports are not accepted (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.2.1 "Ensure nftables is installed (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.2 "Ensure firewalld is not installed or stopped and masked (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.3 "Ensure iptables-services package is not installed (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.4 "Ensure iptables are flushed (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.2.5 "Ensure a table exists (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.6 "Ensure base chains exist (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.7 "Ensure loopback traffic is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.8 "Ensure outbound and established connections are configured (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.2.9 "Ensure default deny firewall policy (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.10 "Ensure nftables service is enabled (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.2.11 "Ensure nftables rules are permanent (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.1.1 "Ensure iptables packages are installed (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.1.2 "Ensure nftables is not installed (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.1.3 "Ensure firewalld is not installed or stopped and masked (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.1 "Ensure default deny firewall policy (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.2 "Ensure loopback traffic is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.3 "Ensure outbound and established connections are configured (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.4 "Ensure firewall rules exist for all open ports (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.5 "Ensure iptables rules are saved (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.6 "Ensure iptables is enabled and running (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.2.6 "Ensure iptables is enabled and running (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.3.2 "Ensure IPv6 loopback traffic is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.3.3 "Ensure IPv6 outbound and established connections are configured (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.3.3.4 "Ensure IPv6 firewall rules exist for all open ports (Manual)" Yes Server1 Workstation1
-test_wrapper 3.5.3.3.5 "Ensure ip6tables rules are saved (Automated)" Yes Server1 Workstation1
-test_wrapper 3.5.3.3.6 "Ensure ip6tables is enabled and running (Automated)" Yes Server1 Workstation1
-test_wrapper 4.1.2.1 "Ensure audit log storage size is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 4.1.2.2 "Ensure audit logs are not automatically deleted (Automated)" Yes Server1 Workstation1
-test_wrapper 4.1.2.3 "Ensure system is disabled when audit logs are full (Automated)" Yes Server1 Workstation1
-test_wrapper 4.1.2.4 "Ensure audit_backlog_limit is sufficient (Automated)" Yes Server1 Workstation1
-test_wrapper 4.2.1.6 "Ensure remote rsyslog messages are only accepted on designated log hosts. (Manual)" Yes Server1 Workstation1
-test_wrapper 5.1.9 "Ensure at is restricted to authorized users (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.16 "Ensure SSH Idle Timeout Interval is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.17 "Ensure SSH LoginGraceTime is set to one minute or less (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.18 "Ensure SSH warning banner is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.19 "Ensure SSH PAM is enabled (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.20 "Ensure SSH AllowTcpForwarding is disabled (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.21 "Ensure SSH MaxStartups is configured (Automated)" Yes Server1 Workstation1
-test_wrapper 5.2.22 "Ensure SSH MaxSessions is limited (Automated)" Yes Server1 Workstation1
+test_wrapper 1.9 "Ensure updates, patches, and additional security software are installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.1.1 "Ensure xinetd is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.1.1 "Ensure time synchronization is in use (Manual)" Yes Server1 Workstation1
+test_wrapper 2.2.1.2 "Ensure chrony is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.1.3 "Ensure ntp is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.2 "Ensure X11 Server components are not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.3 "Ensure Avahi Server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.4 "Ensure CUPS is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.5 "Ensure DHCP Server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.6 "Ensure LDAP server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.7 "Ensure nfs-utils is not installed or the nfs-server service is masked (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.8 "Ensure rpcbind is not installed or the rpcbind services are masked (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.9 "Ensure DNS Server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.10 "Ensure FTP Server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.11 "Ensure HTTP server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.12 "Ensure IMAP and POP3 server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.13 "Ensure Samba is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.14 "Ensure HTTP Proxy Server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.15 "Ensure net-snmp is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.16 "Ensure mail transfer agent is configured for local-only mode (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.17 "Ensure rsync is not installed or the rsyncd service is masked (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.18 "Ensure NIS server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.2.19 "Ensure telnet-server is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.3.1 "Ensure NIS Client is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.3.2 "Ensure rsh client is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.3.3 "Ensure talk client is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.3.4 "Ensure telnet client is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 2.3.5 "Ensure LDAP client is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.1 "Audit system file permissions (Manual)" Yes Server1 Workstation1
+test_wrapper 6.1.2 "Ensure permissions on /etc/passwd are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.3 "Ensure permissions on /etc/shadow are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.4 "Ensure permissions on /etc/group are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.5 "Ensure permissions on /etc/gshadow are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.6 "Ensure permissions on /etc/passwd- are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.7 "Ensure permissions on /etc/shadow- are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.8 "Ensure permissions on /etc/group- are configured (Automated)" Yes Server1 Workstation1 
+test_wrapper 6.1.9 "Ensure permissions on /etc/gshadow- are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.10 "Ensure no world writable files exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.11 "Ensure no unowned files or directories exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.12 "Ensure no ungrouped files or directories exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.1.13 "Audit SUID executables (Manual)" Yes Server1 Workstation1
+test_wrapper 6.1.14 "Audit SGID executables (Manual)" Yes Server1 Workstation1
+test_wrapper 6.2.2 "Ensure /etc/shadow password fields are not empty (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.3 "Ensure root is the only UID 0 account (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.4 "Ensure root PATH Integrity (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.5 "Ensure all users' home directories exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.6 "Ensure users' home directories permissions are 750 or more restrictive (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.7 "Ensure users own their home directories (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.8 "Ensure users' dot files are not group or world writable (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.9 "Ensure no users have .forward files (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.10 "Ensure no users have .netrc files (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.11 "Ensure users' .netrc Files are not group or world accessible (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.12 "Ensure no users have .rhosts files (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.13 "Ensure all groups in /etc/passwd exist in /etc/group (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.14 "Ensure no duplicate UIDs exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.15 "Ensure no duplicate GIDs exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.16 "Ensure no duplicate user names exist (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.17 "Ensure no duplicate group names exist (Automated)" Yes Server1 Workstation1
+
 
 echo
 echo Results

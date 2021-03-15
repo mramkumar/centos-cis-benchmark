@@ -1,6 +1,10 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.4.2 - Ensure bootloader password is set (Scored)
+# 1.4.2 Ensure filesystem integrity is regularly checked (Automated)
 
-grep "^GRUB2_PASSWORD" /boot/grub2/grub.cfg || exit $?
+if [[ $(ls -A /etc/cron.*) ]] ; then
+ grep -r aide /etc/cron.* /etc/crontab || exit $?
+else
+ crontab -u root -l | grep aide || exit $?
+fi

@@ -1,10 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 2.2.17 - Ensure rsh server is not enabled (Scored)
+# 2.2.17 Ensure rsync is not installed or the rsyncd service is masked (Automated)
 
-variable="rsh|rlogin|rexec"
-for i in $(echo $variable | sed "s/|/ /g")
-do
-    systemctl is-enabled $i 2>&1 | grep -E "(disabled|No such file or directory)" || exit $?
-done
+rpm -q rsync | grep -E "package rsync is not installed" || exit $1

@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.7 - Ensure separate partition exists for /var/tmp (Scored)
+# 1.1.7 Ensure noexec option set on /dev/shm partition (Automated)
 
-mount | grep /var/tmp || exit $?
+mount | grep /dev/shm | grep noexec || exit $?

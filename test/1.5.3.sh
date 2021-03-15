@@ -1,17 +1,8 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.5.3 - Ensure address space layout randomization (ASLR) is enabled (Scored)
+# 1.5.3 Ensure authentication required for single user mode (Automated)
 
-sysctl kernel.randomize_va_space | grep -E "kernel.randomize_va_space = 2"
-if [[ $? == 0 ]]; then
-        exit 0
-fi
+grep /sbin/sulogin /usr/lib/systemd/system/rescue.service | grep -E 'ExecStart=-/bin/sh -c "(/usr)?/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"' || exit $?
 
-if [[ $(ls -A /etc/sysctl.d/) ]] ; then
-        grep "kernel.randomize_va_space" /etc/sysctl.conf /etc/sysctl.d/* | grep -E "kernel.randomize_va_space = 2" || exit $?
-else
-        grep "kernel.randomize_va_space" /etc/sysctl.conf | grep -E "kernel.randomize_va_space = 2" || exit $?
-fi
-
-
+grep /sbin/sulogin /usr/lib/systemd/system/emergency.service | grep -E 'ExecStart=-/bin/sh -c "(/usr)?/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"' || exit $?

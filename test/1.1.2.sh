@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.1.2 - Ensure separate partition exists for /tmp (Scored)
+# 1.1.2 Ensure /tmp is configured (Automated)
 
 mount | grep /tmp || exit $?
