@@ -1,6 +1,8 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 5.4.4 - Ensure default user umask is 027 or more restrictive (Scored)
+# 5.4.4 Ensure default user shell timeout is configured (Automated)
 
-[[ "$(umask)" =~ [0-7][2-7]7$ ]] || exit;
+if [[ $TMOUT -eq "" || $TMOUT -gt 900 ]]; then
+        exit 1
+fi

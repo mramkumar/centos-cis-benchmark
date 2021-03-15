@@ -1,7 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 4.1.15 - Ensure changes to system administration scope (sudoers) is collected (Scored)
+# 4.1.15 Ensure system administrator actions (sudolog) are collected (Automated)
 
-cut -d\# -f1 /etc/audit/audit.rules | egrep "\-k[[:space:]]+scope" | egrep "\-p[[:space:]]+wa" \
-  | egrep -q "\-w[[:space:]]+\/etc\/sudoers" || exit 1
+cut -d\# -f1 /etc/audit/audit.rules | egrep "\-k[[:space:]]+actions" | egrep "\-p[[:space:]]+wa" \
+  | egrep -q "\-w[[:space:]]+\/var\/log\/sudo.log" || exit 1

@@ -1,6 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 4.1.1.3 - Ensure audit logs are not automatically deleted (Scored)
+# 4.1.1.3 Ensure auditing for processes that start prior to auditd is enabled (Automated)
 
-cut -d\# -f2 /etc/audit/auditd.conf | grep 'max_log_file_action' | cut -d= -f2 | tr -d '[[:space:]]' | grep -q 'keep_logs' || exit 1
+grep_grub="$(grep "^[[:space:]]*linux" /boot/grub2/grub.cfg | grep -v 'audit=1')"
+[[ -z "${grep_grub}" ]] || exit 1

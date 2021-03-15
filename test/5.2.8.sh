@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 5.2.8 - Ensure SSH root login is disabled (Scored)
+# 5.2.8 Ensure SSH IgnoreRhosts is enabled (Automated)
 
-grep "^\s*PermitRootLogin" /etc/ssh/sshd_config | grep -q "PermitRootLogin\s*no" || exit $?
+grep "^\s*IgnoreRhosts" /etc/ssh/sshd_config | grep -q "IgnoreRhosts\s*yes" || exit $?

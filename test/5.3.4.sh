@@ -1,8 +1,14 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 5.3.4 - Ensure password hashing algorithm is SHA-512 (Scored)
+# 5.3.4 Ensure password reuse is limited (Automated)
 
-egrep '^password\s+sufficient\s+pam_unix.so' /etc/pam.d/password-auth | grep sha512 || exit $?
+R=$(egrep '^password\s+sufficient\s+pam_unix.so' /etc/pam.d/password-auth | grep "remember" | sed 's/.*remember=\([0-9]*\).*/\1/g')
+if [[ $R -lt 5 ]] ; then
+        exit 1
+fi
 
-egrep '^password\s+sufficient\s+pam_unix.so' /etc/pam.d/system-auth | grep sha512 || exit $?
+R=$(egrep '^password\s+sufficient\s+pam_unix.so' /etc/pam.d/system-auth |grep "remember" | sed 's/.*remember=\([0-9]*\).*/\1/g')
+if [[ $R -lt 5 ]] ; then
+        exit 1
+fi

@@ -1,7 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 4.2.1.3 - Ensure rsyslog default file permissions configured (Scored)
+# 4.2.1.3 Ensure rsyslog default file permissions configured (Automated)
 
 EC=0
 [[ "$(grep ^\$FileCreateMode /etc/rsyslog.conf)" =~ 0[0-6][0-4]0$ ]] || EC=1

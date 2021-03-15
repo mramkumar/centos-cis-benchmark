@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 5.2.10 - Ensure SSH PermitUserEnvironment is disabled (Scored)
+# 5.2.10 Ensure SSH root login is disabled (Automated)
 
-grep "^\s*PermitUserEnvironment" /etc/ssh/sshd_config | grep -q "PermitUserEnvironment\s*no" || exit $?
+grep "^\s*PermitRootLogin" /etc/ssh/sshd_config | grep -q "PermitRootLogin\s*no" || exit $?

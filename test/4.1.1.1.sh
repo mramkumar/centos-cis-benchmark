@@ -1,6 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 4.1.1.1 - Ensure audit log storage size is configured (Not Scored)
+rpm -q audit | grep -E "package audit is not installed" || exit $1
 
-cut -d\# -f1 /etc/audit/auditd.conf | egrep -q "max_log_file[[:space:]]|max_log_file=" || exit 1
+rpm -q audit-libs | grep -E "package audit-libs is not installed" || exit $1
