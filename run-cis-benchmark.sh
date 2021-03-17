@@ -296,6 +296,12 @@ test_wrapper 3.5.2.9 "Ensure default deny firewall policy (Automated)" Yes Serve
 test_wrapper 5.2.12 "Ensure SSH PermitUserEnvironment is disabled (Automated)" Yes Server1 Workstation1
 test_wrapper 5.2.13 "Ensure only strong Ciphers are used (Automated)" Yes Server1 Workstation1
 test_wrapper 5.2.15 "Ensure only strong Key Exchange algorithms are used (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.19 "Ensure SSH PAM is enabled (Automated)" Yes Server1 Workstation1
+test_wrapper 1.3.1 "Ensure sudo is installed (Automated)" Yes Server1 Workstation1
+test_wrapper 1.2.5 "Disable the rhnsd Daemon (Manual)" Yes Server1 Workstation1
+test_wrapper 3.5.1.4 "Ensure firewalld service is enabled and running (Automated)" Yes Server1 Workstation1
+test_wrapper 3.5.1.1 "Ensure FirewallD is installed (Automated)" Yes Server1 Workstation1
+test_wrapper 1.2.4 "Ensure Red Hat Subscription Manager connection is configured (Manual)" Yes Server1 Workstation1
 
 echo
 echo Results
