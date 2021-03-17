@@ -293,6 +293,8 @@ test_wrapper 5.2.22 "Ensure SSH MaxSessions is limited (Automated)" Yes Server1 
 test_wrapper 3.5.2.7 "Ensure loopback traffic is configured (Automated)" Yes Server1 Workstation1
 test_wrapper 3.5.2.8 "Ensure outbound and established connections are configured (Manual)" Yes Server1 Workstation1
 test_wrapper 3.5.2.9 "Ensure default deny firewall policy (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.13 "Ensure only strong Ciphers are used (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.15 "Ensure only strong Key Exchange algorithms are used (Automated)" Yes Server1 Workstation1
 
 echo
 echo Results
