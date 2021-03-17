@@ -1,7 +1,7 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 1.7.2 - Ensure GDM login banner is configured (Scored)
+# 1.10 Ensure GDM is removed or login is configured (Automated)
 
 rpm -q gdm | grep -Eq "package gdm is not installed"
 if [[ $? -ne 0 ]]; then
