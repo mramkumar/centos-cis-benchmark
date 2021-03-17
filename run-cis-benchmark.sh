@@ -273,7 +273,26 @@ test_wrapper 5.4.5 "Ensure default user umask is configured (Automated)" Yes Ser
 test_wrapper 5.5 "Ensure root login is restricted to system console (Manual)" Yes Server1 Workstation1
 test_wrapper 5.6 "Ensure access to the su command is restricted (Automated)" Yes Server1 Workstation1
 test_wrapper 1.10 "Ensure GDM is removed or login is configured (Automated)" Yes Server1 Workstation1
-
+test_wrapper 3.1.1 "Disable IPv6 (Manual)" Yes Server1 Workstation1
+test_wrapper 3.1.2 "Ensure wireless interfaces are disabled (Manual)" Yes Server1 Workstation1
+test_wrapper 3.2.1 "Ensure IP forwarding is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 3.2.2 "Ensure packet redirect sending is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.1 "Ensure source routed packets are not accepted (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.2 "Ensure ICMP redirects are not accepted (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.3 "Ensure secure ICMP redirects are not accepted (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.4 "Ensure suspicious packets are logged (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.5 "Ensure broadcast ICMP requests are ignored (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.6 "Ensure bogus ICMP responses are ignored (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.9 "Ensure IPv6 router advertisements are not accepted (Automated)" Yes Server1 Workstation1
+test_wrapper 3.4.1 "Ensure DCCP is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 3.4.2 "Ensure SCTP is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 1.7.1.4 "Ensure the SELinux mode is enforcing or permissive (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.20 "Ensure SSH AllowTcpForwarding is disabled (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.21 "Ensure SSH MaxStartups is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.22 "Ensure SSH MaxSessions is limited (Automated)" Yes Server1 Workstation1
+test_wrapper 3.5.2.7 "Ensure loopback traffic is configured (Automated)" Yes Server1 Workstation1
+test_wrapper 3.5.2.8 "Ensure outbound and established connections are configured (Manual)" Yes Server1 Workstation1
+test_wrapper 3.5.2.9 "Ensure default deny firewall policy (Automated)" Yes Server1 Workstation1
 
 echo
 echo Results

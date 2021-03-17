@@ -1,7 +1,6 @@
 #!/bin/sh
 # ** AUTO GENERATED **
 
-# 3.4.2 - Ensure /etc/hosts.allow is configured (Scored)
+# 3.4.2 Ensure SCTP is disabled (Automated)
 
-# == you will need to manually review the /etc/hosts.allow file
-exit 1
+modprobe -n -v sctp | grep -E "(install /bin/true|FATAL: Module sctp not found.)" || exit $?
