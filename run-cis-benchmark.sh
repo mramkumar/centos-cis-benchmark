@@ -302,6 +302,18 @@ test_wrapper 1.2.5 "Disable the rhnsd Daemon (Manual)" Yes Server1 Workstation1
 test_wrapper 3.5.1.4 "Ensure firewalld service is enabled and running (Automated)" Yes Server1 Workstation1
 test_wrapper 3.5.1.1 "Ensure FirewallD is installed (Automated)" Yes Server1 Workstation1
 test_wrapper 1.2.4 "Ensure Red Hat Subscription Manager connection is configured (Manual)" Yes Server1 Workstation1
+test_wrapper 6.2.1 "Ensure accounts in /etc/passwd use shadowed passwords (Automated)" Yes Server1 Workstation1
+test_wrapper 6.2.18 "Ensure shadow group is empty (Automated)" Yes Server1 Workstation1
+test_wrapper 1.3.2 "Ensure sudo commands use pty (Automated)" Yes Server1 Workstation1
+test_wrapper 1.3.3 "Ensure sudo log file exists (Automated)" Yes Server1 Workstation1
+test_wrapper 4.2.2.1 "Ensure journald is configured to send logs to rsyslog (Automated)" Yes Server1 Workstation1
+test_wrapper 4.2.2.2 "Ensure journald is configured to compress large log files (Automated)" Yes Server1 Workstation1
+test_wrapper 4.2.2.3 "Ensure journald is configured to write logfiles to persistent disk (Automated)" Yes Server1 Workstation1
+test_wrapper 4.1.2.4 "Ensure audit_backlog_limit is sufficient (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.8 "Ensure TCP SYN Cookies is enabled (Automated)" Yes Server1 Workstation1
+test_wrapper 3.3.7 "Ensure Reverse Path Filtering is enabled (Automated)" Yes Server1 Workstation1
+test_wrapper 3.5.3.1.2 "Ensure nftables is not installed (Automated)" Yes Server1 Workstation1
+test_wrapper 3.5.1.3 "Ensure nftables is not installed or stopped and masked (Automated)" Yes Server1 Workstation1
 
 echo
 echo Results
