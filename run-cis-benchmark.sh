@@ -314,6 +314,8 @@ test_wrapper 3.3.8 "Ensure TCP SYN Cookies is enabled (Automated)" Yes Server1 W
 test_wrapper 3.3.7 "Ensure Reverse Path Filtering is enabled (Automated)" Yes Server1 Workstation1
 test_wrapper 3.5.3.1.2 "Ensure nftables is not installed (Automated)" Yes Server1 Workstation1
 test_wrapper 3.5.1.3 "Ensure nftables is not installed or stopped and masked (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.2 "Ensure permissions on SSH private host key files are configured (Automated)" Yes Server1 Workstation1
+test_wrapper 5.2.3 "Ensure permissions on SSH public host key files are configured (Automated)" Yes Server1 Workstation1
 
 echo
 echo Results
